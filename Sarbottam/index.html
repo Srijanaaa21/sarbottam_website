@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarbottam Cement</title>
+
+    <!-- AOS ANIMATION -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <!-- CURTAIN on top -->
+    <section class="curtain-container position-absolute top-0 start-0 w-100 vh-100 overflow-hidden"
+        style="pointer-events:none;">
+        <div class="curtain-top d-flex justify-content-center align-items-end pb-3">
+            <img src="./Images/sarbottam-text.png" alt="Sarbottam Text">
+        </div>
+        <div class="curtain-bottom d-flex justify-content-center align-items-top pt-3">
+            <img src="./Images/cement-text.png" alt="Cement Text">
+        </div>
+    </section>
+
+    <!-- Navbar -->
+    <nav id="main-navbar" class="container-fluid navbar navbar-expand-lg py-2">
+        <ul class="d-flex justify-content-between px-0 w-100">
+            <li class="px-0">
+                <a href="">
+                    <img src="./Images/logo.png" alt="" class="nav-logo">
+                </a>
+            </li>
+            <li class="d-flex px-0 align-items-center justify-content-between">
+                <span class="text-uppercase">Menu</span>
+                <div class="bar ps-3 d-flex flex-column justify-content-end">
+                    <div class="bar1 rounded"></div>
+                    <div class="bar2 rounded"></div>
+                    <div class="bar3 rounded"></div>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION (Sticky) -->
+    <section id="hero-section" class="main-content">
+        <div class="container h-100 d-flex flex-column justify-content-start align-items-center pt-3">
+            <img src="./Images/logo.png" alt="Sarbottam Logo" class="logo logo-interaction img-fluid" />
+            <div class="position-relative w-100 d-flex justify-content-center align-items-center flex-grow-1">
+                <img id="hero-img" src="./Images/building-mask.png" alt="Building Image"
+                    class="building-img img-fluid position-absolute" />
+                <img id="cement-bag" src="./Images/cement-bag-square.png" alt="Cement Bag"
+                    class="cement-bag position-absolute" data-aos="fade-down-left" data-aos-delay="1000"
+                    data-aos-duration="800" data-aos-easing="ease-out" />
+            </div>
+        </div>
+    </section>
+
+    <!-- BLUE SECTION (Normal flow) -->
+    <section id="main-blue-section"
+        class="main-blue-section d-flex flex-column justify-content-center align-items-center pb-5">
+        <div class="text-center main-text" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500"
+            data-aos-easing="ease-out">
+            <h3>Built for Generations. Trusted for Excellence.</h3>
+            <p class="fw-normal px-2">Nepal’s first eco-friendly cement with German VRM technology—delivering
+                strength, sustainability, and
+                precision-engineered performance for every structure that matters.</p>
+        </div>
+        <div class="d-flex flex-column justify-content-center align-items-center">
+            <h4>Awards and Accolades</h4>
+            <img src="./Images/image-4.png" alt="" class="img-fluid">
+        </div>
+    </section>
+
+    <!-- Cement features -->
+    <section>
+        <div class="container-fluid">
+            <div class="scroll-step-container" id="scroll-step-container">
+
+                <section class="feature-reveal-sticky" id="sticky-reveal">
+                    <!-- SVG lines -->
+                    <svg class="line" id="line-1" width="270" height="130" style="left:28%;top:100px">
+                        <polyline points="0,40 130,40 230,130" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2"
+                            fill="none" stroke-dasharray="7 7" />
+                    </svg>
+                    <svg class="line" id="line-2" width="230" height="130" style="left:60%;top:100px">
+                        <polyline points="0,130 80,40 180,40" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2"
+                            fill="none" stroke-dasharray="7 7" />
+                    </svg>
+                    <svg class="line" id="line-3" width="230" height="130" style="left:26%;bottom:120px">
+                        <polyline points="40,130 150,130 200,50" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2"
+                            fill="none" stroke-dasharray="7 7" />
+                    </svg>
+                    <svg class="line" id="line-4" width="250" height="130" style="left:56%;bottom:30px">
+                        <polyline points="0,0 80,90 230,90" stroke="#ffffff" stroke-opacity="0.4" stroke-width="2"
+                            fill="none" stroke-dasharray="7 7" />
+                    </svg>
+
+                    <!-- Center Image -->
+                    <div class="product-center">
+                        <img src="./Images/cement-bag-square.png" alt="Cement Bag" />
+                    </div>
+
+                    <!-- Feature Panels -->
+                    <div class="feature-panel panel-topleft" id="panel-1">
+                        <h2>ISO Certification</h2>
+                        <p>Sarbottam Cement have been awarded with the Nepal Standard Mark. The ISO Certified Company
+                            situated.</p>
+                        <button>view detail</button>
+                    </div>
+                    <div class=" feature-panel panel-topright" id="panel-2">
+                        <h2>Own Mine</h2>
+                        <p>Sarbottam Cement have been awarded with the Nepal Standard Mark. The ISO Certified Company
+                            situated.</p>
+                        <button>view detail</button>
+                    </div>
+
+                    <div class="feature-header feature-panel panel-bottomleft" id="panel-3">
+                        <h2>VRM Technology</h2>
+                        <p> Vertical Roller Mill (VRM), can reduce up to 50% of energy consumption when compared to
+                            traditional Ball Mills employed in cement.</p>
+                        <button>view detail</button>
+                    </div>
+                    <div class="feature-header feature-panel panel-bottomright" id="panel-4">
+                        <h2>Used Everywhere</h2>
+                        <p>Sarbottam Cement have been awarded with the Nepal Standard Mark. The ISO Certified Company
+                            situated.</p>
+                        <button>view projects</button>
+                    </div>
+                </section>
+                <div id="swap-trigger" style="position:relative;top:calc(100vh + 80px);height:10px"></div>
+
+            </div>
+            <!-- <div class="spacer"></div> -->
+        </div>
+    </section>
+
+    <!-- Our Products -->
+    <section>
+        <div class="container text-center py-5">
+            <h2 class="product-head mb-3">Our Products</h2>
+            <div class="row d-flex justify-content-center">
+                <div class="col-lg-8">
+                    <p class="px-3 mb-5 product-text">
+                        Sarbottam Cement delivers superior strength and durability with cutting-edge VRM Technology.
+                        Whether
+                        you’re building a home, infrastructure or industrial structure, our range of high-grade cement
+                        ensures
+                        unmatched performance and reliability.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center g-5">
+                <!-- Product 1 -->
+                <div class="col-lg-6 col-md-8 position-relative d-flex flex-column align-items-center">
+                    <div class="products-wrapper position-relative mb-4">
+                        <img src="./Images/cement-bag-square.png" class="product-front">
+                        <img src="./Images/cement-bag.png" class="product-back">
+                    </div>
+                    <div class="product-info">
+                        <span class="dot opc-dot"></span>
+                        <span class="product-label">OPC Cement (43 and 53 Grade)</span>
+                    </div>
+                    <button class="product-btn">view detail</button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="col-lg-6 col-md-8 position-relative d-flex flex-column align-items-center">
+                    <div class="products-wrapper position-relative mb-4">
+                        <img src="./Images/ppc_cement-Photoroom.png" class="single-product">
+                    </div>
+                    <div class="product-info">
+                        <span class="dot ppc-dot"></span>
+                        <span class="product-label">PPC Cement</span>
+                    </div>
+                    <button class="product-btn">view detail</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="container-fluid">
+            <div class="row footer-main py-5">
+                <!-- Corporate Office -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-title">Corporate Office</h5>
+                    <ul class="footer-contact">
+                        <li>
+                            <span>
+                                <i class="bi bi-geo-alt-fill">
+
+                                </i>
+                            </span>
+                            Neupane Tower, Tinkune, Kathmandu Nepal
+                        </li>
+                        <li>
+                            <span>
+                                <i class="bi bi-envelope-fill"></i>
+                            </span>
+                            <a href="mailto:info@sarbottamcement.com">info@sarbottamcement.com</a>
+                        </li>
+                        <li>
+                            <span>
+                                <i class="fa-solid fa-phone"></i>
+                            </span>01-4117502, 01-4111942, 01-4111709, 01-4111621
+                        </li>
+                    </ul>
+                    <div class="footer-social-icons">
+                        <a href="#" class="me-2">
+                           <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#" class="mx-2">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="mx-2">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="ms-2">
+                            <i class="fa-brands fa-viber"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Factory Address -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5 class="footer-title">Factory Address</h5>
+                    <ul class="footer-contact">
+                        <li><span><i class="bi bi-geo-alt-fill"></i></span>Neupane Tower, Tinkune, Kathmandu Nepal</li>
+                    </ul>
+                </div>
+
+                <!-- Navigational Links -->
+                <div class="col-lg-4 col-md-12 mb-4">
+                    <h5 class="footer-title">Navigational Links</h5>
+                    <div class="footer-links gap-5">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Our Timeline</a></li>
+                                    <li><a href="#">CSR Activities</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Our Team</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="footer-divider">
+
+            <!-- Bottom Footer -->
+            <div class="footer-bottom d-flex justify-content-between align-items-center py-3">
+                <p class="mb-0">Copyright @2025 Sarbottam. All rights reserved.</p>
+                <div class="footer-legal-links d-flex gap-5">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- SCRIPTS -->
+    <script src="https://kit.fontawesome.com/edb7c66d7f.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
