@@ -55,32 +55,36 @@
     </nav>
 
     <!-- HERO SECTION (Sticky) -->
-    <section id="hero-section" class="main-content">
-        <div class="container h-100 d-flex flex-column justify-content-start align-items-center pt-3">
+    <section id="hero-section" class="main-content pb-5 mb-5">
+        <div class="container h-100 d-flex flex-column justify-content-center align-items-center pt-3">
             <img src="./Images/logo.png" alt="Sarbottam Logo" class="logo logo-interaction img-fluid" />
             <div class="position-relative w-100 d-flex justify-content-center align-items-center flex-grow-1">
                 <img id="hero-img" src="./Images/building-mask.png" alt="Building Image"
                     class="building-img img-fluid position-absolute" />
                 <img id="cement-bag" src="./Images/cement-bag-square.png" alt="Cement Bag"
-                    class="cement-bag position-absolute" data-aos="fade-down-left" data-aos-delay="1000"
-                    data-aos-duration="800" data-aos-easing="ease-out" />
+                    class="cement-bag position-absolute" data-aos="fade-down-left" data-aos-delay="1500"
+                    data-aos-duration="500" data-aos-easing="ease-out" />
             </div>
         </div>
     </section>
 
     <!-- BLUE SECTION (Normal flow) -->
     <section id="main-blue-section"
-        class="main-blue-section d-flex flex-column justify-content-center align-items-center pb-5">
-        <div class="text-center main-text" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500"
-            data-aos-easing="ease-out">
-            <h3>Built for Generations. Trusted for Excellence.</h3>
-            <p class="fw-normal px-2">Nepal’s first eco-friendly cement with German VRM technology—delivering
-                strength, sustainability, and
-                precision-engineered performance for every structure that matters.</p>
-        </div>
-        <div class="d-flex flex-column justify-content-center align-items-center">
-            <h4>Awards and Accolades</h4>
-            <img src="./Images/image-4.png" alt="" class="img-fluid">
+        class="main-blue-section my-5 pb-5 pt-5 d-flex justify-content-center align-items-center">
+        <div class="d-flex flex-column justify-content-center align-items-center py-5 mt-5">
+            <div class="text-center main-text" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500"
+                data-aos-easing="ease-out">
+                <h3>Built for Generations. Trusted for Excellence.</h3>
+                <p class="fw-normal px-2">Nepal’s first eco-friendly cement with German VRM technology—delivering
+                    strength, sustainability, and
+                    precision-engineered performance for every structure that matters.</p>
+            </div>
+
+            <div class="d-flex flex-column justify-content-center align-items-center" data-aos="fade-up"
+                data-aos-delay="500" data-aos-duration="500" data-aos-easing="ease-out">
+                <h4>Awards and Accolades</h4>
+                <img src="./Images/image-4.png" alt="" class="img-fluid">
+            </div>
         </div>
     </section>
 
@@ -223,7 +227,7 @@
                     </ul>
                     <div class="footer-social-icons">
                         <a href="#" class="me-2">
-                           <i class="fa-brands fa-facebook"></i>
+                            <i class="fa-brands fa-facebook"></i>
                         </a>
                         <a href="#" class="mx-2">
                             <i class="fa-brands fa-instagram"></i>
@@ -288,6 +292,95 @@
     <script src="https://kit.fontawesome.com/edb7c66d7f.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Intro Timeline (runs once on load)
+        // const intro = gsap.timeline();
+        // intro
+        //     .from(".logo-interaction", {
+        //         y: -100,
+        //         opacity: 0,
+        //         duration: 1,
+        //         ease: "power2.out"
+        //     })
+        //     .from(".building-img", {
+        //         scale: 0.5,
+        //         opacity: 0,
+        //         duration: 0.8,
+        //         ease: "power2.out"
+        //     }, "-=0.6")
+        //     .from(".cement-bag", {
+        //         y: 80,
+        //         opacity: 0,
+        //         duration: 0.9,
+        //         ease: "power2.out"
+        //     }, "-=0.5");
+
+        // Parallax effect on scroll (same as before)
+        // gsap.to("#hero-section .logo-interaction", {
+        //     y: -60,
+        //     scrollTrigger: {
+        //         trigger: "#main-blue-section",
+        //         start: "top bottom",
+        //         end: "top top",
+        //         scrub: true
+        //     }
+        // });
+        // gsap.to("#hero-section .building-img", {
+        //     y: -100,
+        //     scrollTrigger: {
+        //         trigger: "#main-blue-section",
+        //         start: "top bottom",
+        //         end: "top top",
+        //         scrub: true
+        //     }
+        // });
+        // gsap.to("#hero-section .cement-bag", {
+        //     y: -140,
+        //     scrollTrigger: {
+        //         trigger: "#main-blue-section",
+        //         start: "top bottom",
+        //         end: "top top",
+        //         scrub: true
+        //     }
+        // });
+
+        // Blue section covers hero
+        gsap.to("#main-blue-section", {
+            y: "-60vh",
+            ease: "none",
+            scrollTrigger: {
+                trigger: "#main-blue-section",
+                start: "top bottom",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+
+        // Animate cement bag drop-in when the section loads
+        gsap.fromTo(
+            ".product-center",
+            { y: -700, opacity: 0.2 },
+            {
+                y: 0,
+                opacity: 1,
+                // duration: 2,
+                ease: "power1.inOut",
+                scrollTrigger: {
+                    trigger: ".product-center",
+                    start: "top bottom",
+                    end: "top 40%",
+                    toggleActions: "play none none none",
+                    scrub: true,
+                    once: true
+                }
+            }
+        );
+
+
+    </script>
 </body>
 
 </html>

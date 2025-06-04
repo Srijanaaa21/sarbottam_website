@@ -188,27 +188,27 @@ container.appendChild(swapTrigger);
 gsap.registerPlugin(ScrollTrigger);
 
 ScrollTrigger.create({
-  trigger: "#swap-trigger",
-  start: "top center", // When swap-trigger reaches center of viewport
-  end: "+=150",        // How long the swap stays active
-  onEnter: () => {
-    panel3Heading.textContent = newPanel3Heading;
-    panel3Para.textContent = newPanel3Paragraph;
-    panel4Heading.textContent = newPanel4Heading;
-    panel4Para.textContent = newPanel4Paragraph;
-    // Hide the buttons
-    panel3.querySelector("button").style.display = "none";
-    panel4.querySelector("button").style.display = "none";
-  },
-  onLeaveBack: () => {
-    panel3Heading.textContent = originalPanel3Heading;
-    panel3Para.textContent = originalPanel3Paragraph;
-    panel4Heading.textContent = originalPanel4Heading;
-    panel4Para.textContent = originalPanel4Paragraph;
-    // Show buttons again if scrolling back up
-    panel3.querySelector("button").style.display = "";
-    panel4.querySelector("button").style.display = "";
-  }
+    trigger: "#swap-trigger",
+    start: "top center", // When swap-trigger reaches center of viewport
+    end: "+=150",        // How long the swap stays active
+    onEnter: () => {
+        panel3Heading.textContent = newPanel3Heading;
+        panel3Para.textContent = newPanel3Paragraph;
+        panel4Heading.textContent = newPanel4Heading;
+        panel4Para.textContent = newPanel4Paragraph;
+        // Hide the buttons
+        panel3.querySelector("button").style.display = "none";
+        panel4.querySelector("button").style.display = "none";
+    },
+    onLeaveBack: () => {
+        panel3Heading.textContent = originalPanel3Heading;
+        panel3Para.textContent = originalPanel3Paragraph;
+        panel4Heading.textContent = originalPanel4Heading;
+        panel4Para.textContent = originalPanel4Paragraph;
+        // Show buttons again if scrolling back up
+        panel3.querySelector("button").style.display = "";
+        panel4.querySelector("button").style.display = "";
+    }
 });
 
 
