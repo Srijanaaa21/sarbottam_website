@@ -30,18 +30,7 @@ window.addEventListener('load', () => {
 });
 
 
-// Navbar show/hide on blue section
-// window.addEventListener('scroll', function () {
-//     const navbar = document.getElementById('main-navbar');
-//     const blueSection = document.getElementById('main-blue-section');
-//     const rect = blueSection.getBoundingClientRect();
-//     const windowHeight = window.innerHeight;
-//     if (rect.top + rect.height / 2 < windowHeight && rect.bottom > 100) {
-//         navbar.classList.add('visible');
-//     } else {
-//         navbar.classList.remove('visible');
-//     }
-// });
+// Navbar visibility on scroll
 let navbarShown = false;
 let navbarTimer;
 
@@ -58,27 +47,7 @@ window.addEventListener('scroll', function handleScrollOnce() {
 }, { once: true });
 
 
-
-
-
-// Parallax effect for parallax-img (if needed)
-// window.addEventListener('scroll', function () {
-//     const heroSection = document.getElementById('hero-section');
-//     const parallaxImg = document.getElementById('parallax-img');
-//     if (!parallaxImg || !heroSection) return;
-//     const sectionRect = heroSection.getBoundingClientRect();
-//     const windowHeight = window.innerHeight;
-//     if (sectionRect.bottom > windowHeight) {
-//         parallaxImg.style.transform = `translate(-50%, -50%) scale(1)`;
-//         return;
-//     }
-//     const totalParallax = 120;
-//     const heroHeight = sectionRect.height || heroSection.offsetHeight;
-//     const heroScrolled = Math.min(windowHeight - sectionRect.bottom, heroHeight);
-//     const progress = Math.min(Math.max(heroScrolled / heroHeight, 0), 1);
-//     parallaxImg.style.transform = `translate(-50%, calc(-50% - ${progress * totalParallax}px)) scale(${1 - 0.05 * progress})`;
-// });
-
+// Blue section slide up on scroll
 window.addEventListener('scroll', function () {
     const blueSection = document.getElementById('main-blue-section');
     const heroSection = document.getElementById('hero-section');
@@ -104,64 +73,70 @@ window.addEventListener('scroll', function () {
 
 
 // SCROLL-DRIVEN REVEAL
-const panels = [
-    document.getElementById('panel-1'),
-    document.getElementById('panel-2'),
-    document.getElementById('panel-3'),
-    document.getElementById('panel-4')
-];
-const lines = [
-    document.getElementById('line-1'),
-    document.getElementById('line-2'),
-    document.getElementById('line-3'),
-    document.getElementById('line-4')
-];
-const container = document.getElementById('scroll-step-container');
-const steps = panels.length * 2; // 8 steps (line, panel, ...)
+// const panels = [
+//     document.getElementById('panel-1'),
+//     document.getElementById('panel-2'),
+//     document.getElementById('panel-3'),
+//     document.getElementById('panel-4')
+// ];
+// const lines = [
+//     document.getElementById('line-1'),
+//     document.getElementById('line-2'),
+//     document.getElementById('line-3'),
+//     document.getElementById('line-4')
+// ];
+// const container = document.getElementById('scroll-step-container');
+// const steps = panels.length * 2; // 8 steps (line, panel, ...)
 
-const outroStep = steps + 1; // 9th step triggers the outro
+// const outroStep = steps + 1; // 9th step triggers the outro
 
-const headingEl = document.querySelectorAll('.feature-header h2');
-const paraEl = document.querySelectorAll('.feature-header p');
+// const headingEl = document.querySelectorAll('.feature-header h2');
+// const paraEl = document.querySelectorAll('.feature-header p');
 
-window.addEventListener('scroll', function () {
-    const rect = container.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    let progress = Math.min(1.1, Math.max(0, (windowHeight - rect.top) / (container.offsetHeight - windowHeight)));
-    let currentStep = Math.floor(progress * steps);
+// window.addEventListener('scroll', function () {
+//     const rect = container.getBoundingClientRect();
+//     const windowHeight = window.innerHeight;
+//     // Offset progress to start at 20% (adjust as you wish)
+//     let progress = (scrollProgress - 0.2) / 0.8;
+//     progress = Math.max(0, Math.min(1, progress));
+//     let currentStep = Math.floor(progress * steps);
+//     // this is new but old worked perfectly. 
 
-    // Reveal lines and panels in alternating steps
-    lines.forEach((line, i) => {
-        if (currentStep >= i * 2) line.classList.add('visible');
-        else line.classList.remove('visible');
-    });
-    panels.forEach((panel, i) => {
-        if (currentStep >= i * 2 + 1) panel.classList.add('visible');
-        else panel.classList.remove('visible');
-    });
+//     // let progress = Math.min(1.1, Math.max(0, (windowHeight - rect.top) / (container.offsetHeight - windowHeight)));
+//     // let currentStep = Math.floor(progress * steps);
 
-    // Show all buttons at the very end (after last panel is fully visible)
-    const showButtons = (currentStep >= steps - 1 && currentStep < steps + 1);
-    panels.forEach(panel => {
-        if (showButtons) panel.classList.add('show-buttons');
-        else panel.classList.remove('show-buttons');
-    });
+//     // Reveal lines and panels in alternating steps
+//     lines.forEach((line, i) => {
+//         if (currentStep >= i * 2) line.classList.add('visible');
+//         else line.classList.remove('visible');
+//     });
+//     panels.forEach((panel, i) => {
+//         if (currentStep >= i * 2 + 1) panel.classList.add('visible');
+//         else panel.classList.remove('visible');
+//     });
 
-    // Outro: hide buttons, change text when fully scrolled past
-    if (progress >= 1) {
-        panels.forEach(panel => panel.classList.remove('show-buttons'));
-        if (headingEl && paraEl) {
-            headingEl.textContent = outroHeading;
-            paraEl.textContent = outroParagraph;
-        }
-    } else {
-        // Restore original texts if scrolling back up
-        if (headingEl && paraEl) {
-            headingEl.textContent = "Your original heading";
-            paraEl.textContent = "Your original paragraph text goes here...";
-        }
-    }
-});
+//     // Show all buttons at the very end (after last panel is fully visible)
+//     const showButtons = (currentStep >= steps - 1 && currentStep < steps + 1);
+//     panels.forEach(panel => {
+//         if (showButtons) panel.classList.add('show-buttons');
+//         else panel.classList.remove('show-buttons');
+//     });
+
+//     // Outro: hide buttons, change text when fully scrolled past
+//     if (progress >= 1) {
+//         panels.forEach(panel => panel.classList.remove('show-buttons'));
+//         if (headingEl && paraEl) {
+//             headingEl.textContent = outroHeading;
+//             paraEl.textContent = outroParagraph;
+//         }
+//     } else {
+//         // Restore original texts if scrolling back up
+//         if (headingEl && paraEl) {
+//             headingEl.textContent = "Your original heading";
+//             paraEl.textContent = "Your original paragraph text goes here...";
+//         }
+//     }
+// });
 
 
 const originalPanel3Heading = "VRM Technology";

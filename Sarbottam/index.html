@@ -72,7 +72,7 @@
     <section id="main-blue-section"
         class="main-blue-section my-5 pb-5 pt-5 d-flex justify-content-center align-items-center">
         <div class="d-flex flex-column justify-content-center align-items-center py-5 mt-5">
-            <div class="text-center main-text" data-aos="fade-up" data-aos-delay="200" data-aos-duration="500"
+            <div class="text-center main-text" data-aos="fade-up" data-aos-delay="100" data-aos-duration="500"
                 data-aos-easing="ease-out">
                 <h3>Built for Generations. Trusted for Excellence.</h3>
                 <p class="fw-normal px-2">Nepal’s first eco-friendly cement with German VRM technology—delivering
@@ -197,7 +197,6 @@
     </section>
 
     <!-- Footer -->
-    <!-- Footer Section -->
     <footer class="footer-section">
         <div class="container-fluid">
             <div class="row footer-main py-5">
@@ -362,24 +361,46 @@
         // Animate cement bag drop-in when the section loads
         gsap.fromTo(
             ".product-center",
-            { y: -700, opacity: 0.2 },
+            { y: 500, opacity: 1 },
             {
                 y: 0,
                 opacity: 1,
                 // duration: 2,
                 ease: "power1.inOut",
                 scrollTrigger: {
-                    trigger: ".product-center",
+                    trigger: ".scroll-step-container",
                     start: "top bottom",
-                    end: "top 40%",
-                    toggleActions: "play none none none",
+                    end: "top center",
+                    // toggleActions: "play none none none",
                     scrub: true,
                     once: true
                 }
             }
         );
 
+        // Show the feature panels and lines in sequence as you scroll
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".feature-reveal-sticky",
+                start: "top top",
+                end: "+=300%",   // Section lasts 3x viewport, adjust for slower/faster step timing
+                scrub: true,
+                pin: true,
+                markers: true // Uncomment for debugging
+            }
+        });
 
+        // Now each line & panel in strict turn order:
+        tl.to("#line-1", { opacity: 1, x: 0, duration: 0.2 }, ">+=0.2")
+            .to("#panel-1", { opacity: 1, scale: 1, duration: 0.3 }, ">+=0.1")
+            .to("#line-2", { opacity: 1, x: 0, duration: 0.2 }, ">+=0.2")
+            .to("#panel-2", { opacity: 1, scale: 1, duration: 0.3 }, ">+=0.1")
+            .to("#line-3", { opacity: 1, x: 0, duration: 0.2 }, ">+=0.2")
+            .to("#panel-3", { opacity: 1, scale: 1, duration: 0.3 }, ">+=0.1")
+            .to("#line-4", { opacity: 1, x: 0, duration: 0.2 }, ">+=0.2")
+            .to("#panel-4", { opacity: 1, scale: 1, duration: 0.3 }, ">+=0.1")
+            // Optionally: reveal all buttons at end
+            .to(".feature-panel button", { opacity: 1, duration: 0.2, stagger: 0.05 }, ">+=0.1")
     </script>
 </body>
 

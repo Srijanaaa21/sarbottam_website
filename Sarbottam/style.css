@@ -200,7 +200,7 @@ a {
 .main-blue-section {
     background-color: var(--primary-color);
     width: 100vw;
-    height: 50vh;
+    height: 100vh;
     position: relative;
     z-index: 555;
     transition: background 0.4s;
@@ -441,6 +441,21 @@ nav .nav-logo {
 .line.visible#line-4 {
     transform: translateX(0);
 }
+
+#panel-1, #panel-2, #panel-3, #panel-4 {
+  opacity: 0;
+  scale: 0.96;
+  pointer-events: none;
+}
+#line-1, #line-2, #line-3, #line-4 {
+  opacity: 0;
+
+}
+
+.feature-panel button {
+  opacity: 0;
+}
+
 
 /* Responsive */
 @media (max-width: 900px) {
