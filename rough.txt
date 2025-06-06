@@ -1,0 +1,4 @@
+.opc-dot { background-color: #004D95; }
+.ppc-dot { background-color: #1FB14C; }
+
+--primary-color: #000814;
