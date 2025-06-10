@@ -41,18 +41,19 @@ a {
 
 /* Curtain comes on top */
 .curtain-container {
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    width: 100vw;
     height: 100vh;
     z-index: 9999;
     top: 0;
     left: 0;
     pointer-events: none;
+    overflow: hidden;
 }
 
 .curtain-top,
 .curtain-bottom {
-    width: 100%;
+    width: 100vw;
     height: 50vh;
     background-color: black;
     position: absolute;
@@ -60,25 +61,30 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    transition: transform 0.4s cubic-bezier(.77, 0, .18, 1), background-color 0.3s ease-in-out;
     z-index: 1000;
 }
 
 .curtain-top {
     top: 0;
     align-items: flex-end;
+    /* padding-bottom: 2vw; */
 }
 
 .curtain-bottom {
     bottom: 0;
     align-items: flex-start;
+    /* padding-top: 2vw; */
 }
 
 .curtain-top img,
 .curtain-bottom img {
-    height: auto;
+    max-width: 82vw;
+    max-height: 30vh;
     width: auto;
-    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: max-width 0.3s, max-height 0.3s;
 }
 
 /* When animation starts */
@@ -95,8 +101,10 @@ a {
     transform: translateY(100%);
 }
 
-/* Main-content interaction */
 
+
+
+/* Main-content interaction */
 .main-content {
     width: 100vw;
     height: 100vh;
@@ -121,20 +129,6 @@ a {
     animation: dropLogo 0.7s cubic-bezier(.77, 0, .18, 1) 1.5s forwards;
 }
 
-/* .logo {
-  transform: translateZ(-600px) scale(3);
-  z-index: 1;
-}
-
-.building-img {
-  transform: translateZ(-525px) scale(2.75);
-  z-index: 2;
-}
-
-.cement-bag {
-  transform: translateZ(-400px) scale(2.33333333);
-  z-index: 3;
-} */
 
 @keyframes dropLogo {
     0% {
@@ -162,13 +156,6 @@ a {
     /* delay: 0.1s */
     will-change: transform;
 }
-
-/* Parallax effect */
-/* .parallax__group {
-  position: relative;
-  transform-style: preserve-3d;
-} */
-
 
 /* Zoom-in effect */
 .zoom-in {
@@ -365,9 +352,11 @@ nav .nav-logo {
     border: none;
     background: #1A1D20;
     color: #fff;
-    border-radius: 32px;
-    padding: .55em 1.8em;
-    font-size: 1.01em;
+    border-radius: 40px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.56px;
     cursor: pointer;
     opacity: 0;
     pointer-events: none;
@@ -459,46 +448,7 @@ nav .nav-logo {
 }
 
 
-/* Responsive */
-@media (max-width: 900px) {
-    .product-center {
-        width: 180px;
-        height: 210px;
-    }
-
-    .product-center img {
-        max-width: 110px;
-    }
-
-    .feature-panel {
-        width: 93vw;
-        left: 3% !important;
-        right: 3% !important;
-        text-align: center !important;
-    }
-
-    .panel-topleft {
-        top: 3%;
-    }
-
-    .panel-topright {
-        top: 25%;
-    }
-
-    .panel-bottomleft {
-        bottom: 22%;
-    }
-
-    .panel-bottomright {
-        bottom: 2%;
-    }
-
-    .line {
-        display: none;
-    }
-}
-
-/* Our productd */
+/* Our products */
 .products-wrapper {
     display: flex;
     justify-content: center;
@@ -691,20 +641,6 @@ nav .nav-logo {
     opacity: 0.7;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .footer-bottom {
-        flex-direction: column;
-        gap: 1rem;
-        text-align: center;
-    }
-
-    .footer-links {
-        justify-content: center;
-        gap: 3rem;
-    }
-}
-
 
 /* Our Projects Page CSS */
 .project-heading {
@@ -800,10 +736,6 @@ nav .nav-logo {
 
 
 /* About Us CSS */
-/* .navbar-border{
-    border-bottom: 0.1px solid #fff;
-    box-shadow: 2px 0 2px var(--primary-color);
-} */
 
 .about-banner {
     padding-bottom: 30px;
@@ -909,7 +841,7 @@ nav .nav-logo {
     position: relative;
     overflow: hidden;
     aspect-ratio: 3 / 4;
-    /* Add this for consistent image block ratio */
+    /* consistent image block ratio */
 }
 
 .img-hover-main img {
