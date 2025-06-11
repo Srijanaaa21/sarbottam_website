@@ -129,15 +129,15 @@ const tl = gsap.timeline({
     scrollTrigger: {
         trigger: ".feature-reveal-sticky",
         start: "top top",
-        end: "+=300%",   // Section lasts 3x viewport, adjust for slower/faster step timing
+        end: "+=300%",
         scrub: true,
         pin: true,
         // markers: true // Uncomment for debugging
 
-        onLeave: () => {
-            swapTextFade(panel3, "Advanced Efficiency", "Our VRM tech delivers peak performance and cost savings.");
-            swapTextFade(panel4, "National Trust", "Relied on by major projects, homes, and industries across Nepal.");
-        }
+        // onLeave: () => {
+        //     swapTextFade(panel3, "Advanced Efficiency", "Our VRM tech delivers peak performance and cost savings.");
+        //     swapTextFade(panel4, "National Trust", "Relied on by major projects, homes, and industries across Nepal.");
+        // }
     }
 });
 
@@ -169,19 +169,66 @@ const orig4P = panel4Para.textContent;
 const new4H = "National Trust";
 const new4P = "Relied on by major projects, homes, and industries across Nepal.";
 
-// 3. The swapTextFade function
+// Fade text swap (after scroll stuck, when 30% left)
+ScrollTrigger.create({
+    trigger: ".feature-reveal-sticky",
+    start: "bottom 70%",
+    // once: true,
+    onEnter: () => {
+        swapTextFade(panel3, "Advanced Efficiency", "Our VRM tech delivers peak performance and cost savings.");
+        swapTextFade(panel4, "National Trust", "Relied on by major projects, homes, and industries across Nepal.");
+    },
+    onLeaveBack: () => {
+        swapTextFade(panel3, orig3H, orig3P);
+        swapTextFade(panel4, orig4H, orig4P);
+    }
+});
+
+// The swapTextFade function
 function swapTextFade(panel, newH, newP) {
-  const h2 = panel.querySelector("h2");
-  const p = panel.querySelector("p");
-  // Animate out
-  gsap.to([h2, p], {
-    opacity: 0,
-    duration: 0.6,
-    onComplete: () => {
-      h2.textContent = newH;
-      p.textContent = newP;
-      // Animate in
-      gsap.to([h2, p], { opacity: 1, duration: 0.6 });
+    const h2 = panel.querySelector("h2");
+    const p = panel.querySelector("p");
+    // Animate out
+    gsap.to([h2, p], {
+        opacity: 0,
+        duration: 0.6,
+        onComplete: () => {
+            h2.textContent = newH;
+            p.textContent = newP;
+            // Animate in
+            gsap.to([h2, p], { opacity: 1, duration: 0.6 });
+        }
+    });
+}
+
+// Our Products - Parallax effect
+
+ // PARALLAX: Make the Our Products container move slower than scroll
+  gsap.to(".product-container", {
+    yPercent: -20, // Parallax effect (move up slower than scroll)
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".product-container",
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true
     }
   });
-}
+
+  // REVEAL: Fade in & move up the whole section only after 70% of Cement Features section is complete
+  // (Assumes .feature-reveal-sticky is the cement features section)
+  const productsContainer = document.querySelector(".product-container");
+  productsContainer.classList.add("products-animate-in"); // Start hidden
+
+  ScrollTrigger.create({
+    trigger: ".feature-reveal-sticky",
+    start: "bottom 70%",
+    once: true,
+    onEnter: () => {
+      productsContainer.classList.add("visible");
+    },
+    // Optional: fade out when going back up
+    onLeaveBack: () => {
+      productsContainer.classList.remove("visible");
+    }
+  });
