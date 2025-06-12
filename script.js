@@ -100,24 +100,44 @@ gsap.to("#hero-section", {
 });
 
 // Animate cement bag drop-in when the section loads
-gsap.fromTo(
-    ".product-center",
-    { y: 500, opacity: 1 },
-    {
-        y: 0,
-        opacity: 1,
-        // duration: 2,
-        ease: "power1.inOut",
-        scrollTrigger: {
-            trigger: ".main-blue-section",
-            start: "bottom center",
-            end: "top center",
-            // toggleActions: "play none none none",
-            scrub: true,
-            once: true
+// gsap.fromTo(
+//     ".product-center",
+//     { y: 500, opacity: 1 },
+//     {
+//         y: 0,
+//         opacity: 1,
+//         // duration: 2,
+//         ease: "power1.inOut",
+//         scrollTrigger: {
+//             trigger: ".main-blue-section",
+//             start: "bottom center",
+//             end: "top center",
+//             // toggleActions: "play none none none",
+//             scrub: true,
+//             once: true
+//         }
+//     }
+// );
+
+window.addEventListener("load", function () {
+    gsap.fromTo(
+        ".product-center",
+        { y: 500, opacity: 1 },
+        {
+            y: 0,
+            opacity: 1,
+            ease: "power1.inOut",
+            scrollTrigger: {
+                trigger: ".main-blue-section",
+                start: "bottom center",
+                end: "top center",
+                scrub: true,
+                once: true
+            }
         }
-    }
-);
+    );
+});
+
 
 
 // Your panel elements
@@ -203,32 +223,32 @@ function swapTextFade(panel, newH, newP) {
 
 // Our Products - Parallax effect
 
- // PARALLAX: Make the Our Products container move slower than scroll
-  gsap.to(".product-container", {
+// PARALLAX: Make the Our Products container move slower than scroll
+gsap.to(".product-container", {
     yPercent: -20, // Parallax effect (move up slower than scroll)
     ease: "none",
     scrollTrigger: {
-      trigger: ".product-container",
-      start: "top bottom",
-      end: "bottom top",
-      scrub: true
+        trigger: ".product-container",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
     }
-  });
+});
 
-  // REVEAL: Fade in & move up the whole section only after 70% of Cement Features section is complete
-  // (Assumes .feature-reveal-sticky is the cement features section)
-  const productsContainer = document.querySelector(".product-container");
-  productsContainer.classList.add("products-animate-in"); // Start hidden
+// REVEAL: Fade in & move up the whole section only after 70% of Cement Features section is complete
+// (Assumes .feature-reveal-sticky is the cement features section)
+const productsContainer = document.querySelector(".product-container");
+productsContainer.classList.add("products-animate-in"); // Start hidden
 
-  ScrollTrigger.create({
+ScrollTrigger.create({
     trigger: ".feature-reveal-sticky",
     start: "bottom 70%",
     once: true,
     onEnter: () => {
-      productsContainer.classList.add("visible");
+        productsContainer.classList.add("visible");
     },
     // Optional: fade out when going back up
     onLeaveBack: () => {
-      productsContainer.classList.remove("visible");
+        productsContainer.classList.remove("visible");
     }
-  });
+});
