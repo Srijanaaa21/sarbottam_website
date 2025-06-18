@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Projects | Sarbottam Cement</title>
+    <title>Investors Relation | Sarbottam Cement</title>
 
     <!-- AOS ANIMATION -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 <body>
     <!-- Navbar -->
     <nav class="container-fluid navbar navbar-expand-lg py-2">
-        <ul class="d-flex justify-content-between px-0 w-100">
+        <ul class="d-flex justify-content-between px-0 w-100 m-0">
             <li class="px-0">
                 <a href="">
                     <img src="./Images/logo.png" alt="" class="nav-logo">
@@ -43,44 +43,107 @@
         </ul>
     </nav>
 
-    <!-- Our Projects -->
-    <section>
-        <div class="container-fluid px-3 mt-5">
-            <h2 class="mb-4 project-heading">Our Projects</h2>
-            <div class="row gy-3 mt-2">
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <img src="./Images/dharahara.png" alt="" class="w-100 mb-3">
-                    <span class="project-title">Dharahara at Sundhara, Kathmandu</span>
-                </div>
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <img src="./Images/Karma Residency kathmandu.png" alt="" class="w-100 mb-3">
-                    <span class="project-title">Karma Residency at Kathmandu</span>
-                </div>
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <img src="./Images/minister quater.png" alt="" class="w-100 mb-3">
-                    <span class="project-title">Minister's Quarter Development</span>
-                </div>
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <img src="./Images/dharahara.png" alt="" class="w-100 mb-3">
-                    <span class="project-title">Dharahara at Sundhara, Kathmandu</span>
-                </div>
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <img src="./Images/Karma Residency kathmandu.png" alt="" class="w-100 mb-3">
-                    <span class="project-title">Karma Residency at Kathmandu</span>
-                </div>
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <img src="./Images/minister quater.png" alt="" class="w-100 mb-3">
-                    <span class="project-title">Minister's Quarter Development</span>
+    <!-- Investors Relation -->
+    <section class="investors-wrapper">
+        <div class="container-fluid px-3">
+            <div class="row py-5">
+                <div class="col-lg-7">
+                    <div class="investors-topic m-0">
+                        <h2>Investors Relation</h2>
+                        <p class="m-0">Lorem ipsum dolor sit amet consectetur. Justo velit amet lectus odio sit
+                            adipiscing donec
+                            pulvinar.
+                            Convallis a malesuada urna sed massa eu sed.</p>
+                    </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-center align-items-center load-btn">
-                <button class="product-btn load-padding">load more...</button>
+
+            <div class="reports-tab ">
+                <ul class="nav nav-pills mb-3 w-100 d-flex" id="pills-tab" role="tablist">
+                    <li class="nav-item flex-fill text-center" role="presentation">
+                        <button class="nav-link active w-100" id="pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                            aria-selected="true">Notices</button>
+                    </li>
+                    <li class="nav-item flex-fill text-center" role="presentation">
+                        <button class="nav-link w-100" id="pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                            aria-selected="false">Annual Report</button>
+                    </li>
+                    <li class="nav-item flex-fill text-center" role="presentation">
+                        <button class="nav-link w-100" id="pills-contact-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+                            aria-selected="false">Quaterly Report</button>
+                    </li>
+                </ul>
+
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                        aria-labelledby="pills-home-tab" tabindex="0">
+
+                        <!-- Search and dropdown -->
+                        <div class="d-flex justify-content-between align-items-center py-4">
+                            <span class="ps-2">File Name</span>
+
+                            <div class="d-flex">
+                                <!-- Search box -->
+                                <div class="search-content position-relative">
+                                    <input type="text" class="form-control custom-search-input ps-3 pe-5"
+                                        placeholder="Search for a file..." />
+                                    <i class="bi bi-search position-absolute search-icon"></i>
+                                </div>
+
+                                <!-- Dropdown filter -->
+                                <div class="dropdown ms-2">
+                                    <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown"
+                                        aria-expanded="false" data-bs-auto-close="outside">
+                                        <img src="./Images/filter.png" alt="">
+                                    </button>
+
+                                    <!-- Dropdown remaining -->
+                                    <form class="dropdown-menu p-4">
+                                        <div class="mb-3">
+                                            <label for="exampleDropdownFormEmail2" class="form-label">Email
+                                                address</label>
+                                            <input type="email" class="form-control" id="exampleDropdownFormEmail2"
+                                                placeholder="email@example.com">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleDropdownFormPassword2"
+                                                class="form-label">Password</label>
+                                            <input type="password" class="form-control"
+                                                id="exampleDropdownFormPassword2" placeholder="Password">
+                                        </div>
+                                    </form>
+                                    <!-- Dropdown remaining -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Table -->
+                        <div class="table-responsive">
+                            <table class="table">
+                                
+                            </table>
+                        </div>
+
+
+
+                    </div>
+                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                        tabindex="0">
+                        ...</div>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                        tabindex="0">
+                        ...</div>
+                </div>
             </div>
+
         </div>
     </section>
 
     <!-- Footer Section -->
-    <footer class="footer-section">
+    <footer class="footer-section vrm-footer">
         <div class="container-fluid">
             <div class="row footer-main py-5">
                 <!-- Corporate Office -->
@@ -171,7 +234,10 @@
     <!-- SCRIPTS -->
     <script src="https://kit.fontawesome.com/edb7c66d7f.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+
+
 </body>
 
 </html>

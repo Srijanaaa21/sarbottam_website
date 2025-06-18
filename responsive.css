@@ -14,6 +14,14 @@
     .cement-bag {
         max-width: 180px;
     }
+
+    .product-spec {
+        margin: 0 90px;
+    }
+
+    .product-spec .d-flex {
+        padding: 0 50px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -130,6 +138,14 @@
         width: 100%;
         padding: 10px 0;
     }
+
+    .product-spec {
+        margin: 0 50px;
+    }
+
+    .product-spec .d-flex {
+        padding: 0 30px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -201,6 +217,38 @@
         top: 3% !important;
     }
 
+    .product-info {
+        flex-direction: column;
+    }
+
+    .product-front,
+    .product-back,
+    .single-product {
+        max-width: 180px;
+    }
+
+    .product-spec {
+        margin: 0 30px;
+    }
+
+    .product-spec .d-flex {
+        flex-direction: column;
+        text-align: start;
+        padding: 0 16px 30px 16px;
+    }
+
+    .product-spec .d-flex .img{
+        padding-bottom: 30px;
+    }
+
+    .product-spec .d-flex h4{
+        font-size: 20px;
+    }
+
+    .product-spec .d-flex p{
+        font-size: 15px;
+    }
+
 }
 
 @media (max-width: 600px) {
@@ -231,6 +279,7 @@
         width: 92vw;
         min-width: 60px;
     }
+
     .cement-bag {
         max-width: 52px;
         margin-top: 6px;

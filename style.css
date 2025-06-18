@@ -188,11 +188,13 @@ a {
 .main-blue-section {
     background-color: var(--primary-color);
     width: 100vw;
-    height: 100vh; /* will be overridden by GSAP */
+    height: 100vh;
+    /* will be overridden by GSAP */
     position: relative;
     z-index: 555;
     transition: background 0.4s;
-    overflow: visible; /* for parallax */
+    overflow: visible;
+    /* for parallax */
 }
 
 
@@ -433,18 +435,25 @@ nav .nav-logo {
     transform: translateX(0);
 }
 
-#panel-1, #panel-2, #panel-3, #panel-4 {
-  opacity: 0;
-  scale: 0.96;
-  pointer-events: none;
+#panel-1,
+#panel-2,
+#panel-3,
+#panel-4 {
+    opacity: 0;
+    scale: 0.96;
+    pointer-events: none;
 }
-#line-1, #line-2, #line-3, #line-4 {
-  opacity: 0;
+
+#line-1,
+#line-2,
+#line-3,
+#line-4 {
+    opacity: 0;
 
 }
 
 .feature-panel button {
-  opacity: 0;
+    opacity: 0;
 }
 
 
@@ -532,18 +541,6 @@ nav .nav-logo {
 
 .product-btn:hover {
     background: rgba(255, 255, 255, 0.2);
-}
-
-@media (max-width: 768px) {
-    .product-info {
-        flex-direction: column;
-    }
-
-    .product-front,
-    .product-back,
-    .single-product {
-        max-width: 180px;
-    }
 }
 
 
@@ -967,3 +964,175 @@ nav .nav-logo {
     font-size: 40px;
     color: #A9A9A9;
 }
+
+
+/* Products Page CSS */
+.text-justify {
+    text-align: justify;
+}
+
+.product-desc {
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.94;
+    font-family: var(--normal-font);
+}
+
+.m-16 {
+    margin-right: -16px;
+}
+
+.adv-img {
+    max-height: 529px;
+}
+
+.advantages h2 {
+    font-size: 34px;
+    line-height: 1;
+    padding-bottom: 32px;
+}
+
+.adv-point {
+    border-left: 5px solid #1EB14C;
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.94;
+}
+
+.product-spec {
+    background-color: #1C2129;
+    margin: 0 125px;
+}
+
+.product-spec .d-flex {
+    padding: 0 110px;
+}
+
+.product-spec .d-flex h4 {
+    font-size: 22px;
+    line-height: 29.04px;
+}
+
+.product-spec .d-flex p {
+    font-size: 16px;
+    line-height: 25.6px;
+    opacity: 0.94;
+}
+
+.product-spec .d-flex span {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.product-spec .d-flex span a {
+    color: #A1CAFF;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.product-spec .d-flex span:hover a {
+    color: #84aee5ab;
+}
+
+.view-link {
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 400;
+    border-bottom: 1px solid #ffffff;
+}
+
+
+/* Investors Relation */
+.investors-topic h2 {
+    line-height: 1;
+    font-weight: 800;
+}
+
+.investors-topic p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.94;
+    font-weight: 400;
+}
+
+.nav-pills{
+    border-bottom: 2px solid #132843 !important;
+}
+
+.nav-pills .nav-link {
+    --bs-nav-pills-border-radius: none !important;
+    --bs-nav-link-padding-y: 22px !important;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: #5DA6FF33;
+}
+
+.reports-tab .tab-content span{
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 700;
+}
+
+.custom-search-input {
+  background-color: #2D2F32;
+  color: #6D737C;
+  border: none;
+  font-size: 14px;
+  line-height: 1.6;
+  --bs-border-radius: none !important;
+  padding: 8px !important;
+}
+
+.form-control:focus{
+    background-color: #2D2F32;
+    box-shadow: none;
+    color: #6D737C;
+}
+
+.custom-search-input::placeholder {
+  color: #6D737C;
+}
+
+.search-content {
+  width: 250px;
+  position: relative;
+}
+
+.search-icon {
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  color: #6D737C;
+  pointer-events: none;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.reports-tab .dropdown .btn{
+    background-color: #232527;
+    --bs-btn-border-radius: none !important;
+    --bs-btn-padding-x: 8px;
+    --bs-btn-padding-y: 6px;
+}
+.reports-tab .dropdown .btn img{
+    width: 16px !important;
+    height: 16px !important;
+    font-size: 16px;
+}
+.reports-tab .dropdown .btn:hover{
+    background-color: #2D2F32;
+    border-radius: none !important;
+}
+
+.dropdown-toggle::after {
+    display: none;
+    content: "";
+}
+
+
