@@ -1,190 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog Overview | Sarbottam Cement</title>
 
     <!-- AOS ANIMATION -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
     <!-- GSAP + ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
     <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="responsive.css">
-</head>
+    <link rel="stylesheet" href="responsive.css" />
+  </head>
 
-<body>
+  <body>
     <!-- Navbar -->
-    <nav class="container-fluid navbar navbar-expand-lg py-2">
-        <ul class="d-flex justify-content-between px-0 w-100">
-            <li class="px-0">
-                <a href="">
-                    <img src="./Images/logo.png" alt="" class="nav-logo">
-                </a>
-            </li>
-            <li class="d-flex px-0 align-items-center justify-content-between">
-                <span class="text-uppercase">Menu</span>
-                <div class="bar ps-3 d-flex flex-column justify-content-end">
-                    <div class="bar1 rounded"></div>
-                    <div class="bar2 rounded"></div>
-                    <div class="bar3 rounded"></div>
-                </div>
-            </li>
-        </ul>
+    <nav class="container-fluid navbar main sticky-top py-4">
+      <ul class="d-flex justify-content-between px-0 w-100 m-0">
+        <li class="px-0">
+          <a href="">
+            <img src="./Images/logo.png" alt="" class="nav-logo" />
+          </a>
+        </li>
+        <li
+          id="menu-btn"
+          class="d-flex px-0 align-items-center justify-content-between"
+        >
+          <span class="text-uppercase">Menu</span>
+          <div class="bar ps-3 d-flex flex-column justify-content-end">
+            <div class="bar1 rounded"></div>
+            <div class="bar2 rounded"></div>
+            <div class="bar3 rounded"></div>
+          </div>
+        </li>
+      </ul>
     </nav>
 
     <!-- Blog Overview -->
-     <section>
-        <div class="container-fluid px-3 mt-5">
-            <h2 class="mb-4 project-heading">Blog Overview</h2>
+    <section>
+      <div class="container-fluid px-3 mt-5">
+        <h2 class="mb-4 project-heading">Blog Overview</h2>
 
-            <div class="row d-flex flex-wrap justify-content-between align-items-baseline gy-3 mt-2">
+        <div
+          class="row d-flex flex-wrap justify-content-between align-items-stretch gy-3 mt-2"
+        >
+          <div class="col-lg-4 col-sm-6 col-12">
+            <img
+              src="./Images/tech.png"
+              alt="How emerging tech is reshaping global industries"
+              class="w-100"
+            />
+            <button class="blog-date btn d-inline-block mt-3 mb-2">
+              12 Mar 2025
+            </button>
+            <span class="project-title d-block">
+              <a href="blogdetail.html">
+                How emerging tech is reshaping global industries</a
+              >
+            </span>
+          </div>
 
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <img src="./Images/tech.png" alt="How emerging tech is reshaping global industries" class="w-100">
-                    <button class="blog-date btn d-inline-block mt-3 mb-2">12 Mar 2025</button>
-                    <span class="project-title d-block">How emerging tech is reshaping global industries</span>
-                </div>
+          <div class="col-lg-4 col-sm-6 col-12">
+            <img
+              src="./Images/ar.png"
+              alt="Why digital transformation drives modern businesses"
+              class="w-100"
+            />
+            <button class="blog-date btn d-inline-block mt-3 mb-2">
+              12 Mar 2025
+            </button>
+            <span class="project-title d-block"
+              >Why digital transformation drives modern businesses</span
+            >
+          </div>
 
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <img src="./Images/ar.png" alt="Why digital transformation drives modern businesses" class="w-100">
-                    <button class="blog-date btn d-inline-block mt-3 mb-2">12 Mar 2025</button>
-                    <span class="project-title d-block">Why digital transformation drives modern businesses</span>
-                </div>
+          <div class="col-lg-4 col-sm-6 col-12">
+            <img
+              src="./Images/automation.png"
+              alt="How automation trends are impacting global industries"
+              class="w-100"
+            />
+            <button class="blog-date btn d-inline-block mt-3 mb-2">
+              12 Mar 2025
+            </button>
+            <span class="project-title d-block"
+              >How automation trends are impacting global industries</span
+            >
+          </div>
 
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <img src="./Images/automation.png" alt="How automation trends are impacting global industries" class="w-100">
-                    <button class="blog-date btn d-inline-block mt-3 mb-2">12 Mar 2025</button>
-                    <span class="project-title d-block">How automation trends are impacting global industries</span>
-                </div>
+          <div class="col-lg-4 col-sm-6 col-12">
+            <img
+              src="./Images/blockchain.png"
+              alt="Why blockchain adoption is growing in financial sectors"
+              class="w-100"
+            />
+            <button class="blog-date btn d-inline-block mt-3 mb-2">
+              12 Mar 2025
+            </button>
+            <span class="project-title d-block"
+              >Why blockchain adoption is growing in financial sectors</span
+            >
+          </div>
 
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <img src="./Images/blockchain.png" alt="Why blockchain adoption is growing in financial sectors" class="w-100">
-                    <button class="blog-date btn d-inline-block mt-3 mb-2">12 Mar 2025</button>
-                    <span class="project-title d-block">Why blockchain adoption is growing in financial sectors</span>
-                </div>
+          <div class="col-lg-4 col-sm-6 col-12">
+            <img
+              src="./Images/team.png"
+              alt="How smart devices are enhancing personal productivity"
+              class="w-100"
+            />
+            <button class="blog-date btn d-inline-block mt-3 mb-2">
+              12 Mar 2025
+            </button>
+            <span class="project-title d-block"
+              >How smart devices are enhancing personal productivity</span
+            >
+          </div>
 
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <img src="./Images/team.png" alt="How smart devices are enhancing personal productivity" class="w-100">
-                    <button class="blog-date btn d-inline-block mt-3 mb-2">12 Mar 2025</button>
-                    <span class="project-title d-block">How smart devices are enhancing personal productivity</span>
-                </div>
-
-                <div class="col-lg-4 col-sm-6 col-12">
-                    <img src="./Images/cybersecurity.png" alt="Why cybersecurity measures are crucial for businesses" class="w-100">
-                    <button class="blog-date btn d-inline-block mt-3 mb-2">12 Mar 2025</button>
-                    <span class="project-title d-block">Why cybersecurity measures are crucial for businesses</span>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center align-items-center load-btn">
-                <button class="product-btn load-padding">load more...</button>
-            </div>
+          <div class="col-lg-4 col-sm-6 col-12">
+            <img
+              src="./Images/cybersecurity.png"
+              alt="Why cybersecurity measures are crucial for businesses"
+              class="w-100"
+            />
+            <button class="blog-date btn d-inline-block mt-3 mb-2">
+              12 Mar 2025
+            </button>
+            <span class="project-title d-block"
+              >Why cybersecurity measures are crucial for businesses</span
+            >
+          </div>
         </div>
-     </section>
+        <div class="d-flex justify-content-center align-items-center load-btn">
+          <button class="product-btn load-padding">load more...</button>
+        </div>
+      </div>
+    </section>
 
-     <!-- Footer Section -->
+    <!-- Footer Section -->
     <footer class="footer-section">
-        <div class="container-fluid">
-            <div class="row footer-main py-5">
-                <!-- Corporate Office -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <h5 class="footer-title">Corporate Office</h5>
-                    <ul class="footer-contact">
-                        <li>
-                            <span>
-                                <i class="bi bi-geo-alt-fill">
-
-                                </i>
-                            </span>
-                            Neupane Tower, Tinkune, Kathmandu Nepal
-                        </li>
-                        <li>
-                            <span>
-                                <i class="bi bi-envelope-fill"></i>
-                            </span>
-                            <a href="mailto:info@sarbottamcement.com">info@sarbottamcement.com</a>
-                        </li>
-                        <li>
-                            <span>
-                                <i class="fa-solid fa-phone"></i>
-                            </span>01-4117502, 01-4111942, 01-4111709, 01-4111621
-                        </li>
-                    </ul>
-                    <div class="footer-social-icons">
-                        <a href="#" class="me-2">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                        <a href="#" class="mx-2">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="#" class="mx-2">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </a>
-                        <a href="#" class="ms-2">
-                            <i class="fa-brands fa-viber"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Factory Address -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <h5 class="footer-title">Factory Address</h5>
-                    <ul class="footer-contact">
-                        <li><span><i class="bi bi-geo-alt-fill"></i></span>Neupane Tower, Tinkune, Kathmandu Nepal</li>
-                    </ul>
-                </div>
-
-                <!-- Navigational Links -->
-                <div class="col-lg-4 col-md-12 mb-4">
-                    <h5 class="footer-title">Navigational Links</h5>
-                    <div class="footer-links gap-5">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Our Timeline</a></li>
-                                    <li><a href="#">CSR Activities</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-6">
-                                <ul>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Our Team</a></li>
-                                    <li><a href="#">Contact Us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container-fluid">
+        <div class="row footer-main py-5">
+          <!-- Corporate Office -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h5 class="footer-title">Corporate Office</h5>
+            <ul class="footer-contact">
+              <li>
+                <span>
+                  <i class="bi bi-geo-alt-fill"> </i>
+                </span>
+                Neupane Tower, Tinkune, Kathmandu Nepal
+              </li>
+              <li>
+                <span>
+                  <i class="bi bi-envelope-fill"></i>
+                </span>
+                <a href="mailto:info@sarbottamcement.com"
+                  >info@sarbottamcement.com</a
+                >
+              </li>
+              <li>
+                <span> <i class="fa-solid fa-phone"></i> </span>01-4117502,
+                01-4111942, 01-4111709, 01-4111621
+              </li>
+            </ul>
+            <div class="footer-social-icons">
+              <a href="#" class="me-2">
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a href="#" class="mx-2">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a href="#" class="mx-2">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+              <a href="#" class="ms-2">
+                <i class="fa-brands fa-viber"></i>
+              </a>
             </div>
+          </div>
 
-            <hr class="footer-divider">
+          <!-- Factory Address -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <h5 class="footer-title">Factory Address</h5>
+            <ul class="footer-contact">
+              <li>
+                <span><i class="bi bi-geo-alt-fill"></i></span>Neupane Tower,
+                Tinkune, Kathmandu Nepal
+              </li>
+            </ul>
+          </div>
 
-            <!-- Bottom Footer -->
-            <div class="footer-bottom d-flex justify-content-between align-items-center py-3">
-                <p class="mb-0">Copyright @2025 Sarbottam. All rights reserved.</p>
-                <div class="footer-legal-links d-flex gap-5">
-                    <a href="#">Terms & Conditions</a>
-                    <a href="#">Privacy Policy</a>
+          <!-- Navigational Links -->
+          <div class="col-lg-4 col-md-12 mb-4">
+            <h5 class="footer-title">Navigational Links</h5>
+            <div class="footer-links gap-5">
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Our Timeline</a></li>
+                    <li><a href="#">CSR Activities</a></li>
+                  </ul>
                 </div>
+                <div class="col-lg-6">
+                  <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Team</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+
+        <hr class="footer-divider" />
+
+        <!-- Bottom Footer -->
+        <div
+          class="footer-bottom d-flex justify-content-between align-items-center py-3"
+        >
+          <p class="mb-0">Copyright @2025 Sarbottam. All rights reserved.</p>
+          <div class="footer-legal-links d-flex gap-5">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
     </footer>
 
+    <!-- MENU -->
+    <nav id="menu" class="main-menu">
+      <ul class="nav">
+        <li class="nav__item">
+          <a href="index.html">Home</a>
+        </li>
+        <li class="nav__item">
+          <a href="about.html">About Us</a>
+          <ul>
+            <li class="nav__item">
+              <a href="about.html#journey">Our Timeline</a>
+            </li>
+            <li class="nav__item">
+              <a href="about.html#leadership">Leadership</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav__item">
+          <a href="product.html">Our Products</a>
+        </li>
+        <li class="nav__item">
+          <a href="investors-relation.html">Investor Realtions</a>
+        </li>
+        <li class="nav__item">
+          <a href="#">CSR Activites</a>
+        </li>
+        <li class="nav__item">
+          <a href="#" target="_blank">IPO Allotment Result</a>
+        </li>
+        <li class="nav__item">
+          <a href="contact.html">Contact Us</a>
+        </li>
+      </ul>
+    </nav>
+
     <!-- SCRIPTS -->
-    <script src="https://kit.fontawesome.com/edb7c66d7f.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/edb7c66d7f.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
-</body>
-
+    <script src="menu.js"></script>
+  </body>
 </html>
