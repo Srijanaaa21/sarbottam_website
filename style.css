@@ -1251,6 +1251,28 @@ table.custom-table thead.thead-border {
   border-bottom: 2px solid #5da6ff;
 }
 
+.about-title {
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.text-size-80 {
+  font-size: 40px;
+}
+
+@media (min-width: 576px) {
+  .text-size-80 {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .text-size-80 {
+    font-size: 80px;
+  }
+}
+
 /* Custom Icons */
 .download-icon {
   display: inline-block;
