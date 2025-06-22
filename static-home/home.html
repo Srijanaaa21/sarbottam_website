@@ -6,7 +6,7 @@
     <title>Sarbottam Cement</title>
 
     <!-- AOS ANIMATION -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> -->
     <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
@@ -86,43 +86,38 @@
       </ul>
     </nav>
 
-    <!-- HERO SECTION (Sticky) -->
-    <section id="hero-section" class="main-content pb-5 mb-5">
-      <div
-        class="container h-100 d-flex flex-column justify-content-center align-items-center pt-3"
-      >
-        <img
-          src="./Images/logo.png"
-          alt="Sarbottam Logo"
-          class="logo logo-interaction img-fluid"
-        />
-        <div
-          class="position-relative w-100 d-flex justify-content-center align-items-center flex-grow-1"
-        >
+    <!-- id="hero-section"  -->
+    <img
+      src="./Images/logo.png"
+      alt="Sarbottam Logo"
+      id="initial-logo"
+      class="img-fluid logo logo-interaction"
+    />
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="hero-content">
           <img
             id="hero-img"
             src="./Images/building-mask.png"
             alt="Building Image"
-            class="building-img img-fluid position-absolute"
+            class="building-img img-fluid"
           />
           <img
             id="cement-bag"
             src="./Images/cement-bag-square.png"
             alt="Cement Bag"
-            class="cement-bag position-absolute"
-            data-aos="fade-down-left"
-            data-aos-delay="1500"
-            data-aos-duration="500"
-            data-aos-easing="ease-out"
+            class="cement-bag"
           />
         </div>
       </div>
     </section>
 
     <!-- BLUE SECTION (Normal flow) -->
+    <!-- id="main-blue-section" -->
     <section
-      id="main-blue-section"
-      class="main-blue-section my-5 pb-5 pt-5 d-flex justify-content-center align-items-center"
+      class="main-blue-section pb-5 d-flex justify-content-center align-items-center"
     >
       <div
         class="d-flex flex-column justify-content-center align-items-center py-5 mt-5"
@@ -156,155 +151,107 @@
     </section>
 
     <!-- Cement features -->
-    <section>
+    <section class="py-5">
       <div class="container-fluid px-0">
-        <div class="scroll-step-container" id="scroll-step-container">
-          <section class="feature-reveal-sticky" id="sticky-reveal">
-            <!-- SVG lines -->
-            <svg
-              class="line"
-              id="line-1"
-              width="270"
-              height="130"
-              style="left: 28%; top: 100px"
-            >
-              <polyline
-                points="0,40 130,40 230,130"
-                stroke="#ffffff"
-                stroke-opacity="0.4"
-                stroke-width="2"
-                fill="none"
-                stroke-dasharray="7 7"
-              />
-            </svg>
-            <svg
-              class="line"
-              id="line-2"
-              width="230"
-              height="130"
-              style="left: 60%; top: 100px"
-            >
-              <polyline
-                points="0,130 80,40 180,40"
-                stroke="#ffffff"
-                stroke-opacity="0.4"
-                stroke-width="2"
-                fill="none"
-                stroke-dasharray="7 7"
-              />
-            </svg>
-            <svg
-              class="line"
-              id="line-3"
-              width="230"
-              height="130"
-              style="left: 26%; bottom: 120px"
-            >
-              <polyline
-                points="40,130 150,130 200,50"
-                stroke="#ffffff"
-                stroke-opacity="0.4"
-                stroke-width="2"
-                fill="none"
-                stroke-dasharray="7 7"
-              />
-            </svg>
-            <svg
-              class="line"
-              id="line-4"
-              width="250"
-              height="130"
-              style="left: 56%; bottom: 30px"
-            >
-              <polyline
-                points="0,0 80,90 230,90"
-                stroke="#ffffff"
-                stroke-opacity="0.4"
-                stroke-width="2"
-                fill="none"
-                stroke-dasharray="7 7"
-              />
-            </svg>
-
-            <!-- Center Image -->
-            <div class="product-center">
-              <img src="./Images/cement-bag-square.png" alt="Cement Bag" />
+        <section class="feature-reveal-sticky" id="sticky-reveal">
+          <!-- SVG lines -->
+          <div>
+            <div class="d-flex justify-content-start align-items-center mb-300">
+              <div class="feature-panel panel-topleft" id="panel-1">
+                <h2>ISO Certification</h2>
+                <p>
+                  Sarbottam Cement have been awarded with the Nepal Standard
+                  Mark. The ISO Certified Company situated.
+                </p>
+                <a href="#" class="product-btn load-padding">view detail</a>
+              </div>
+              <svg class="line" id="line-1" width="270" height="130">
+                <polyline
+                  points="0,40 130,40 230,130"
+                  stroke="#ffffff"
+                  stroke-opacity="0.4"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-dasharray="7 7"
+                />
+              </svg>
             </div>
 
-            <!-- Feature Panels -->
-            <div class="feature-panel panel-topleft" id="panel-1">
-              <h2>ISO Certification</h2>
-              <p>
-                Sarbottam Cement have been awarded with the Nepal Standard Mark.
-                The ISO Certified Company situated.
-              </p>
-              <button>view detail</button>
+            <div class="d-flex justify-content-start align-items-center">
+              <div
+                class="feature-header feature-panel panel-bottomleft"
+                id="panel-3"
+              >
+                <h2>VRM Technology</h2>
+                <p>
+                  Vertical Roller Mill (VRM), can reduce up to 50% of energy
+                  consumption when compared to traditional Ball Mills employed
+                  in cement.
+                </p>
+                <a href="#" class="product-btn load-padding">view detail</a>
+              </div>
+              <svg class="line" id="line-3" width="230" height="130">
+                <polyline
+                  points="40,130 150,130 200,50"
+                  stroke="#ffffff"
+                  stroke-opacity="0.4"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-dasharray="7 7"
+                />
+              </svg>
             </div>
-            <div class="feature-panel panel-topright" id="panel-2">
-              <h2>Own Mine</h2>
-              <p>
-                Sarbottam Cement have been awarded with the Nepal Standard Mark.
-                The ISO Certified Company situated.
-              </p>
-              <button>view detail</button>
+          </div>
+          <!-- Center Image -->
+          <div class="product-center">
+            <img src="./Images/cement-bag-square.png" alt="Cement Bag" />
+          </div>
+          <div>
+            <div class="d-flex justify-content-start align-items-center mb-300">
+              <svg class="line" id="line-2" width="230" height="130">
+                <polyline
+                  points="0,130 80,40 180,40"
+                  stroke="#ffffff"
+                  stroke-opacity="0.4"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-dasharray="7 7"
+                />
+              </svg>
+              <div class="feature-panel panel-topright" id="panel-2">
+                <h2>Own Mine</h2>
+                <p>
+                  Sarbottam Cement have been awarded with the Nepal Standard
+                  Mark. The ISO Certified Company situated.
+                </p>
+                <a href="#" class="product-btn load-padding">view detail</a>
+              </div>
             </div>
-
-            <div
-              class="feature-header feature-panel panel-bottomleft"
-              id="panel-3"
-            >
-              <h2>VRM Technology</h2>
-              <p>
-                Vertical Roller Mill (VRM), can reduce up to 50% of energy
-                consumption when compared to traditional Ball Mills employed in
-                cement.
-              </p>
-              <button>view detail</button>
+            <div class="d-flex justify-content-start align-items-center">
+              <svg class="line" id="line-4" width="250" height="130">
+                <polyline
+                  points="0,0 80,90 230,90"
+                  stroke="#ffffff"
+                  stroke-opacity="0.4"
+                  stroke-width="2"
+                  fill="none"
+                  stroke-dasharray="7 7"
+                />
+              </svg>
+              <div
+                class="feature-header feature-panel panel-bottomright"
+                id="panel-4"
+              >
+                <h2>Used Everywhere</h2>
+                <p>
+                  Sarbottam Cement have been awarded with the Nepal Standard
+                  Mark. The ISO Certified Company situated.
+                </p>
+                <a href="#" class="product-btn load-padding">view projects</a>
+              </div>
             </div>
-            <div
-              class="feature-header feature-panel panel-bottomright"
-              id="panel-4"
-            >
-              <h2>Used Everywhere</h2>
-              <p>
-                Sarbottam Cement have been awarded with the Nepal Standard Mark.
-                The ISO Certified Company situated.
-              </p>
-              <button>view projects</button>
-            </div>
-
-            <!-- <div class="feature-header feature-panel panel-bottomleft" id="panel-3">
-                        <div class="text-group initial">
-                            <h2>VRM Technology</h2>
-                            <p>Vertical Roller Mill (VRM) can reduce up to 50% of energy consumption when compared to
-                                traditional Ball Mills employed in cement.</p>
-                        </div>
-                        <div class="text-group secondary">
-                            <h2>Advanced Efficiency</h2>
-                            <p>Our VRM technology ensures peak performance and cost-efficiency.</p>
-                        </div>
-                        <button>view detail</button>
-                    </div>
-
-                    <div class="feature-header feature-panel panel-bottomright" id="panel-4">
-                        <div class="text-group initial">
-                            <h2>Used Everywhere</h2>
-                            <p>Sarbottam Cement has been awarded with the Nepal Standard Mark. The ISO Certified Company
-                                situated.</p>
-                        </div>
-                        <div class="text-group secondary">
-                            <h2>National Trust</h2>
-                            <p>Trusted by national infrastructure projects and constructions across Nepal.</p>
-                        </div>
-                        <button>view projects</button>
-                    </div> -->
-          </section>
-          <div
-            id="swap-trigger"
-            style="position: relative; top: calc(100vh + 80px); height: 10px"
-          ></div>
-        </div>
-        <!-- <div class="spacer"></div> -->
+          </div>
+        </section>
       </div>
     </section>
 

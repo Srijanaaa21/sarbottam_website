@@ -109,9 +109,13 @@ a {
 
 /* Main-content interaction */
 .main-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   z-index: 2;
+  padding-top: 114px;
   background-color: var(--primary-color);
   transition: none;
 }
@@ -126,50 +130,55 @@ a {
 }
 
 .logo-interaction {
-  opacity: 0;
-  transition: transform 0.8s cubic-bezier(0.77, 0, 0.18, 1), opacity 0.5s;
-  z-index: 3;
-  animation: dropLogo 0.7s cubic-bezier(0.77, 0, 0.18, 1) 1.5s forwards;
+  opacity: 1;
+  margin: 0 auto;
+  display: block;
+  margin-top: 24px;
 }
 
 @keyframes dropLogo {
   0% {
-    transform: translate(-50%, -100px);
-    opacity: 0;
+    transform: translate(-50%, -100%);
   }
 
   100% {
     transform: translate(-50%, 0);
-    opacity: 1;
   }
 }
 
 .main-content .logo.slide-up {
-  transform: translate(-50%, -140px);
+  transform: translate(-50%, -100%);
   opacity: 0;
 }
 
 .building-img {
-  position: absolute;
-  top: 50%;
+  max-width: 700px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  top: 150px;
+  /* top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.5);
-  transition: transform 0.5s ease-in-out;
+  transform: translate(-50%, -50%) scale(0.5); */
+  /* transition: transform 0.5s ease-in-out; */
   /* delay: 0.1s */
-  will-change: transform;
+  /* will-change: transform; */
 }
 
 /* Zoom-in effect */
-.zoom-in {
+/* .zoom-in {
   transform: translate(-50%, -50%) scale(0.8);
-}
+} */
 
 .cement-bag {
-  max-width: 250px;
-  bottom: 18%;
+  max-width: 230px;
+  position: relative;
+  right: -60%;
+  top: -150px;
+  /* bottom: 18%;
   right: 18%;
-  opacity: 0;
-  z-index: 9;
+  opacity: 1;
+  z-index: 9; */
 }
 
 /* Main blue section CSS */
@@ -190,10 +199,9 @@ a {
 .main-blue-section {
   background-color: var(--primary-color);
   width: 100vw;
-  height: 100vh;
   /* will be overridden by GSAP */
   position: relative;
-  z-index: 555;
+  z-index: 10;
   transition: background-color 0.4s;
   overflow: visible;
   /* for parallax */
@@ -231,6 +239,10 @@ nav .nav-logo {
 
 #main-navbar.visible {
   transform: translateY(0);
+}
+
+#initial-logo.hide {
+  transform: translateY(calc(-100% - 32px));
 }
 
 .bar1,
@@ -286,16 +298,12 @@ nav .nav-logo {
   position: relative;
   width: 100vw;
   height: 400vh;
-  /* 4x steps */
   z-index: 10;
 }
 
 .feature-reveal-sticky {
-  position: sticky;
-  top: 0;
-  left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background: var(--primary-color);
   display: flex;
   justify-content: center;
@@ -305,14 +313,11 @@ nav .nav-logo {
 }
 
 .product-center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(12deg);
+  position: relative;
+  transform: rotate(12deg);
   z-index: 4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  top: -30px;
+  left: -30px;
   transition: transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
 }
 
@@ -322,7 +327,6 @@ nav .nav-logo {
 }
 
 .feature-panel {
-  position: absolute;
   width: 320px;
   max-width: 90vw;
   background: none;
@@ -405,7 +409,6 @@ nav .nav-logo {
 }
 
 .line {
-  position: absolute;
   z-index: 3;
   opacity: 0;
   transform: translateX(0);
@@ -418,19 +421,7 @@ nav .nav-logo {
   opacity: 1;
 }
 
-#line-1,
-#line-2 {
-  transform: translateX(-40px);
-  /* slide in from left */
-}
-
-#line-3,
-#line-4 {
-  transform: translateX(40px);
-  /* slide in from right */
-}
-
-.line.visible#line-1,
+*/ .line.visible#line-1,
 .line.visible#line-2,
 .line.visible#line-3,
 .line.visible#line-4 {
@@ -441,7 +432,7 @@ nav .nav-logo {
 #panel-2,
 #panel-3,
 #panel-4 {
-  opacity: 0;
+  opacity: 1;
   scale: 0.96;
   pointer-events: none;
 }
@@ -450,7 +441,33 @@ nav .nav-logo {
 #line-2,
 #line-3,
 #line-4 {
-  opacity: 0;
+  opacity: 1;
+  position: relative;
+}
+
+#line-1,
+#line-2 {
+  transform: translateY(-25%);
+}
+
+#line-4 {
+  transform: translateY(calc(-65% - 8px));
+}
+#line-3 {
+  transform: translateY(calc(-100% - 8px));
+  /* slide in from right */
+}
+
+#line-2 {
+  left: 50px;
+}
+
+#line-3 {
+  left: -40px;
+}
+
+.mb-300 {
+  margin-bottom: 300px;
 }
 
 .feature-panel button {
