@@ -333,7 +333,6 @@ nav .nav-logo {
   padding: 0;
   opacity: 0;
   pointer-events: none;
-  transform: scale(0.94);
   transition: opacity 0.5s cubic-bezier(0.77, 0, 0.18, 1),
     transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
   z-index: 2;
