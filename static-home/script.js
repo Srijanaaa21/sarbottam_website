@@ -1,5 +1,3 @@
-AOS.init();
-
 // Logo slide-up on hero scroll
 // window.addEventListener("scroll", function () {
 //   const heroSection = document.getElementById("hero-section");

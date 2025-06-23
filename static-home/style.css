@@ -332,7 +332,7 @@ nav .nav-logo {
   background: none;
   padding: 0;
   opacity: 0;
-  pointer-events: none;
+  scale: 0.94;
   transition: opacity 0.5s cubic-bezier(0.77, 0, 0.18, 1),
     transform 0.7s cubic-bezier(0.77, 0, 0.18, 1);
   z-index: 2;
@@ -353,7 +353,6 @@ nav .nav-logo {
 
 .feature-panel.visible {
   opacity: 1;
-  pointer-events: auto;
   transform: scale(1);
 }
 
@@ -366,9 +365,7 @@ nav .nav-logo {
   font-size: 14px;
   font-weight: 400;
   letter-spacing: 0.56px;
-  cursor: pointer;
   opacity: 0;
-  pointer-events: none;
   box-shadow: 0 2px 10px #0002;
   /* transition: background 0.18s; */
   transition: opacity 0.6s cubic-bezier(0.77, 0, 0.18, 1);
@@ -376,7 +373,6 @@ nav .nav-logo {
 
 .feature-panel.show-buttons button {
   opacity: 1;
-  pointer-events: auto;
 }
 
 .feature-panel button:hover {
@@ -432,8 +428,6 @@ nav .nav-logo {
 #panel-3,
 #panel-4 {
   opacity: 1;
-  scale: 0.96;
-  pointer-events: none;
 }
 
 #line-1,
